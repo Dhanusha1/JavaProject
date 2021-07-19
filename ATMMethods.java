@@ -1,11 +1,13 @@
 package com.ust;
 
 import java.util.Scanner;
-
+//The class for creating the ATM operations
 public class ATMMethods {
 	
+	//To get the user inputs
 	Scanner sc = new Scanner(System.in);
 
+	//Declaring the variables
 	int balance = 300000;
 	int withdrawAmount;
 	int p1;
@@ -14,6 +16,7 @@ public class ATMMethods {
 	
 	
 	
+	//Defining the operations
 	void Operations() {
 		System.out.println("******Welcome HDFC Bank*******");
 		System.out.println("Enter your choice : ");
@@ -21,17 +24,20 @@ public class ATMMethods {
 		System.out.println("2 Check Balance");
 		System.out.println("3 Change pin");
 	
-	
+	//Switch is used for incooperating three options togother
 	int choice  = sc.nextInt(); 
 	
 	switch(choice)
 	{
 	case 1:
 		
+		
+		//Function for the cash withdraw
 		System.out.println("Please enter amount to withdraw :");
 		withdrawAmount = sc.nextInt();
 		System.out.println("Please enter the  pin : ");
-		int p3 = sc.nextInt();	
+		int p3 = sc.nextInt();
+			//To compare the amount entered by the user with the current balance
 		if(p3==pin) {
 		if(balance>=withdrawAmount)
 		{
@@ -54,7 +60,7 @@ public class ATMMethods {
         break;
         
 	case 2:
-		
+		//Function for displaying the current balance in the account
 		System.out.println("Please enter the  pin : ");
 		int p4 = sc.nextInt();	
 		if(p4==pin) {
@@ -69,7 +75,7 @@ public class ATMMethods {
 		break;
 		
 	case 3:
-		
+		//Function for changing the current pin
 		System.out.println("Please enter your current pin :");
 		int p = sc.nextInt();
 		if(p == pin)
@@ -98,7 +104,7 @@ public class ATMMethods {
 }
 	
 	
-	
+	//Function to continue the operation
 	char ch;
 	System.out.println("Do you want to continue	(y/n) :");
 	ch = sc.next().charAt(0);
